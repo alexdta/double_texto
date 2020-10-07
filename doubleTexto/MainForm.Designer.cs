@@ -28,11 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.cdrNumer = new System.Windows.Forms.TextBox();
             this.cdrTexto = new System.Windows.Forms.TextBox();
             this.lblNum = new System.Windows.Forms.Label();
             this.lblTxt = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // cdrNumer
@@ -43,6 +45,7 @@
             this.cdrNumer.Name = "cdrNumer";
             this.cdrNumer.Size = new System.Drawing.Size(344, 24);
             this.cdrNumer.TabIndex = 0;
+            this.toolTip.SetToolTip(this.cdrNumer, "Usar punto como separador de decimales");
             // 
             // cdrTexto
             // 
@@ -86,6 +89,14 @@
             this.btnConvert.UseVisualStyleBackColor = true;
             this.btnConvert.Click += new System.EventHandler(this.BtnConvert_Click);
             // 
+            // toolTip
+            // 
+            this.toolTip.AutomaticDelay = 50;
+            this.toolTip.AutoPopDelay = 5000;
+            this.toolTip.InitialDelay = 50;
+            this.toolTip.IsBalloon = true;
+            this.toolTip.ReshowDelay = 10;
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnConvert;
@@ -116,5 +127,6 @@
 		private System.Windows.Forms.Label lblNum;
 		
 			private System.Windows.Forms.TextBox cdrNumer;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

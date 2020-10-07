@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace doubleTexto
@@ -56,15 +57,31 @@ namespace doubleTexto
 
         private string cifraLetras(double pValor)
         {
-            double lCifra = Math.Truncate(pValor);
+            string lResultado;
 
-            string lResultado = numeroTexto(lCifra);
-
-            var lDecimales = Math.Round((pValor - lCifra) * 100, 2);
-
-            if (lDecimales > 0)
+            try
             {
-                lResultado += " con " + lDecimales.ToString() + "/100";
+                double lValorAbs = Math.Abs(pValor);
+
+                double lCifra = Math.Truncate(lValorAbs);
+
+                lResultado = numeroTexto(lCifra);
+
+                var lDecimales = Math.Round((lValorAbs - lCifra), 2) * 100;
+
+                if (lDecimales > 0)
+                {
+                    lResultado += $" con {lDecimales}/100";
+                }
+
+                if (pValor < 0)
+                {
+                    lResultado = $"menos {lResultado}";
+                }
+            }
+            catch (Exception lExcp)
+            {
+                lResultado = lExcp.Message;
             }
 
             return lResultado;
@@ -201,7 +218,16 @@ namespace doubleTexto
         void BtnConvert_Click(object sender, EventArgs e)
         {
             this.cdrTexto.Clear();
-            this.cdrTexto.Text += cifraLetras(Convert.ToDouble(this.cdrNumer.Text));
+
+            double.TryParse
+            (
+                this.cdrNumer.Text,
+                NumberStyles.Any,
+                CultureInfo.InvariantCulture,
+                out double lCifra
+            );
+
+            this.cdrTexto.Text += cifraLetras(lCifra);
         }
 
         #endregion
