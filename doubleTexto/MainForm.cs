@@ -60,6 +60,13 @@ namespace doubleTexto
 
             string lResultado = numeroTexto(lCifra);
 
+            var lDecimales = Math.Round((pValor - lCifra) * 100, 2);
+
+            if (lDecimales > 0)
+            {
+                lResultado += " con " + lDecimales.ToString() + "/100";
+            }
+
             return lResultado;
         }
 

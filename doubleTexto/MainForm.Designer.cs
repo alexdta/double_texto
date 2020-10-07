@@ -37,17 +37,17 @@
             // 
             // cdrNumer
             // 
-            this.cdrNumer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdrNumer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cdrNumer.Location = new System.Drawing.Point(83, 15);
             this.cdrNumer.Margin = new System.Windows.Forms.Padding(4);
             this.cdrNumer.Name = "cdrNumer";
-            this.cdrNumer.Size = new System.Drawing.Size(344, 23);
+            this.cdrNumer.Size = new System.Drawing.Size(344, 24);
             this.cdrNumer.TabIndex = 0;
             // 
             // cdrTexto
             // 
             this.cdrTexto.AcceptsReturn = true;
-            this.cdrTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdrTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cdrTexto.Location = new System.Drawing.Point(83, 48);
             this.cdrTexto.Margin = new System.Windows.Forms.Padding(4);
             this.cdrTexto.Multiline = true;
